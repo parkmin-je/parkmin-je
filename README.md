@@ -1,6 +1,6 @@
 <div align="center">
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=250&section=header&text=Backend%20%26%20IoT%20Developer&fontSize=50&animation=fadeIn&fontAlignY=38&desc=MSA%20Architecture%20|%20Large-Scale%20Systems%20|%20Embedded%20Systems&descAlignY=51&descAlign=50)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=250&section=header&text=Backend%20%26%20IoT%20Developer&fontSize=50&animation=fadeIn&fontAlignY=38&desc=MSA%20Architecture%20|%20Large-Scale%20Systems%20|%20Embedded%20Systems&descAlignY=51&descAlign=50" />
 
 </div>
 
@@ -121,11 +121,11 @@
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=parkmin-je&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9)
+<img src="https://github-readme-stats.vercel.app/api?username=parkmin-je&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9" alt="GitHub Stats" />
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=parkmin-je&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&langs_count=8)
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=parkmin-je&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&langs_count=8" alt="Top Languages" />
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=parkmin-je&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF)
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=parkmin-je&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" alt="GitHub Streak" />
 
 </div>
 
@@ -182,7 +182,6 @@ IoT Web Server:
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/parkmin-je)
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://github.com/parkmin-je/portfolio)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
 
 </div>
 
@@ -196,10 +195,10 @@ IoT Web Server:
 
 *"백엔드부터 임베디드까지, 풀스택 IoT 개발자를 지향합니다"*
 
-![Visitor Count](https://profile-counter.glitch.me/parkmin-je/count.svg)
+<img src="https://komarev.com/ghpvc/?username=parkmin-je&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
 
 ---
 
-![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=150&section=footer)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=150&section=footer" />
 
 </div>
