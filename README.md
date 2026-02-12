@@ -186,7 +186,19 @@ IoT Web Server:
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://github.com/parkmin-je/portfolio)
 
 </div>
+---
 
+## 🐍 Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/parkmin-je/parkmin-je/output/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/parkmin-je/parkmin-je/output/github-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/parkmin-je/parkmin-je/output/github-snake.svg">
+</picture>
+
+</div>
 ---
 
 <div align="center">
