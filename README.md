@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=250&section=header&text=Backend%20%26%20IoT%20Developer&fontSize=50&animation=fadeIn&fontAlignY=38&desc=MSA%20Architecture%20|%20Large-Scale%20Systems%20|%20Embedded%20Systems&descAlignY=51&descAlign=50" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=250&section=header&text=Backend%20and%20IoT%20Developer&fontSize=50&animation=fadeIn&fontAlignY=38&desc=MSA%20Architecture%20-%20Large-Scale%20Systems%20-%20Embedded%20Systems&descAlignY=51&descAlign=50" />
 
 </div>
 
