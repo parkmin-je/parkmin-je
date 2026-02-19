@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=250&section=header&text=Backend%20and%20IoT%20Developer&fontSize=50&animation=fadeIn&fontAlignY=38&desc=MSA%20Architecture%20-%20Large-Scale%20Systems%20-%20Embedded%20Systems&descAlignY=51&descAlign=50" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=200&section=header&text=Backend%20Developer&fontSize=60&animation=fadeIn&fontAlignY=38&desc=Learning%20MSA%20and%20Distributed%20Systems&descAlignY=51&descAlign=50" />
 
 </div>
 
@@ -8,8 +8,8 @@
 
 ### 👋 안녕하세요! 박민제입니다
 
-**엔터프라이즈급 백엔드 시스템**과 **IoT 임베디드 개발**을 하는 개발자입니다.  
-대용량 트래픽 처리, MSA 아키텍처 설계 경험이 있으며, 최근에는 라즈베리파이 기반 IoT 시스템을 구축하고 있습니다.
+**MSA 아키텍처**와 **분산 시스템**을 학습하고 구현하는 백엔드 개발자입니다.
+Spring Boot, Kafka, Redis를 활용한 마이크로서비스 개발에 집중하고 있습니다.
 
 [![GitHub followers](https://img.shields.io/github/followers/parkmin-je?style=social)](https://github.com/parkmin-je)
 [![GitHub stars](https://img.shields.io/github/stars/parkmin-je?style=social)](https://github.com/parkmin-je)
@@ -18,102 +18,80 @@
 
 ---
 
-## 🏆 주요 프로젝트
+## 🎯 학습 목표
 
-### 💼 Enterprise Backend Systems
-
-#### 🛒 [LiveMart MSA E-commerce Platform](https://github.com/parkmin-je/livemart-msa-ecommerce)
-```
-엔터프라이즈급 마이크로서비스 기반 전자상거래 플랫폼
-```
-- **Architecture:** Microservices (MSA)
-- **Tech Stack:** Spring Boot 3, Kafka, Redis, Kubernetes, AWS
-- **Features:** 
-  - Full CI/CD Pipeline with GitHub Actions
-  - Auto-scaling with Kubernetes
-  - Event-driven architecture with Kafka
-  - Distributed caching with Redis
-  - Service mesh implementation
-
-#### 📈 [Real-time Stock Trading System](https://github.com/parkmin-je/real-time-stock-trading)
-```
-실시간 주식/코인 모의투자 시스템 - 대용량 트래픽 처리
-```
-- **Tech Stack:** Java, Kafka, WebSocket
-- **Key Features:**
-  - 대규모 동시 접속 처리
-  - 실시간 시세 데이터 스트리밍
-  - 비동기 주문 처리 시스템
-  - 고성능 메시지 큐 아키텍처
+- **MSA 패턴 심화**: Saga Pattern, CQRS, Event Sourcing
+- **분산 시스템**: 분산 락, 분산 트랜잭션, 동시성 제어
+- **메시지 큐**: Kafka를 활용한 이벤트 기반 아키텍처
+- **DevOps**: Docker, Kubernetes, CI/CD 파이프라인
 
 ---
 
-### 🤖 IoT & Web Development
+## 🏆 주요 프로젝트
+
+### 💼 Backend Systems
+
+#### 🛒 [LiveMart MSA E-commerce](https://github.com/parkmin-je/livemart-msa-ecommerce)
+```
+마이크로서비스 아키텍처 학습을 위한 전자상거래 플랫폼
+```
+**핵심 구현:**
+- **Saga Pattern**: 분산 트랜잭션 및 보상 로직 (Order → Payment → Inventory)
+- **분산 락**: Redis Redisson을 활용한 재고 동시성 제어
+- **이벤트 기반**: Kafka를 통한 서비스 간 비동기 통신
+- **MSA 인프라**: Eureka, API Gateway, Config Server
+
+**기술 스택:**
+- Core: Java 21, Spring Boot 3.4, Spring Cloud
+- Messaging: Apache Kafka
+- Cache: Redis (Standalone)
+- Database: PostgreSQL (서비스별 독립 DB)
+- Container: Docker, Kubernetes + Helm
+
+**학습 성과:**
+- MSA 구조에서의 데이터 일관성 처리 방법 이해
+- 분산 환경에서의 동시성 제어 구현 경험
+- 이벤트 기반 아키텍처의 장단점 학습
+
+---
+
+### 🤖 IoT & Embedded
 
 #### 🔧 [Raspberry Pi IoT Server](https://github.com/parkmin-je/raspberry-pi-project)
 ```
-라즈베리파이 기반 사물인터넷 웹 서버
+라즈베리파이 기반 웹 서버 및 GPIO 제어
 ```
-- **Tech Stack:** Python (Flask), Lighttpd, Node.js, Linux
-- **Features:**
-  - Flask 기반 웹 애플리케이션 (회원가입/로그인)
-  - CGI Python 스크립트 실행
-  - GPIO 센서 제어 인터페이스
-  - 원격 SSH 개발 환경 (VSCode Remote)
+**구현 내용:**
+- Flask 웹 애플리케이션 (회원가입/로그인)
+- Lighttpd 웹 서버 설정
+- CGI를 통한 Python 스크립트 실행
+- GPIO 센서 제어 인터페이스
 
-#### 🏓 [Table Tennis Tournament Manager](https://github.com/parkmin-je/table-tennis-tournament)
-```
-실시간 토너먼트 관리 시스템
-```
-- **Tech Stack:** HTML, JavaScript
-- **Features:** 웹 기반 점수 관리 및 대진표 자동 생성
-
-#### 💼 [Personal Portfolio](https://github.com/parkmin-je/portfolio)
-```
-개인 포트폴리오 웹사이트
-```
-- 프로젝트 쇼케이스 및 기술 스택 소개
+**기술 스택:** Python (Flask), Lighttpd, Linux, GPIO
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ 기술 스택
 
-### Backend & Languages
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-### Frameworks & Libraries
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-
-### Database & Cache
+### Core (실무 수준으로 활용 가능)
+![Java](https://img.shields.io/badge/Java_21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
 
-### Message Queue & Streaming
-![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
-
-### DevOps & Cloud
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+### Familiar (구현 경험 있음)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
-### IoT & Embedded
-![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Shell Script](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
-
-### Web Servers
-![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
-![Lighttpd](https://img.shields.io/badge/Lighttpd-0078D4?style=for-the-badge&logo=server&logoColor=white)
-
-### Tools & IDE
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+### Learning (현재 학습 중)
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
 
 ---
 
@@ -126,66 +104,71 @@
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parkmin-je&theme=github_dark" width="400"/>
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parkmin-je&theme=github_dark" width="400"/>
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parkmin-je&theme=github_dark" width="400"/>
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parkmin-je&theme=github_dark" width="400"/>
-
 </div>
 
 ---
 
-## 💡 전문 분야
+## 💡 학습 중인 기술
 
 <div align="center">
 
-| Backend & Architecture | DevOps & Infrastructure | IoT & Embedded |
+| Backend Architecture | DevOps | Distributed Systems |
 |:---:|:---:|:---:|
-| 마이크로서비스 아키텍처 (MSA) | Kubernetes 오케스트레이션 | 라즈베리파이 개발 |
-| 대용량 트래픽 처리 | CI/CD 파이프라인 구축 | GPIO 센서 제어 |
-| 메시지 큐 시스템 (Kafka) | AWS 클라우드 인프라 | Linux 시스템 관리 |
-| 실시간 데이터 처리 | 컨테이너 기반 배포 | 웹 서버 구축 |
+| Saga Pattern | Kubernetes | 분산 락 (Redisson) |
+| CQRS | Docker Compose | 이벤트 소싱 |
+| API Gateway | CI/CD Pipeline | 메시지 큐 (Kafka) |
+| Service Discovery | Helm Charts | 동시성 제어 |
 
 </div>
 
 ---
 
-## 🌱 현재 학습 중
+## 🌱 최근 학습 내용
 
-- 🤖 **라즈베리파이 IoT 프로젝트** - Flask 웹 서버, GPIO 제어, 센서 데이터 처리
-- 🏗️ **MSA 패턴 심화** - Service Mesh, API Gateway, Circuit Breaker
-- 📊 **Kafka Streams** - 실시간 데이터 파이프라인 구축
-- ☁️ **Kubernetes 고급** - StatefulSet, Operator Pattern
-- 🔐 **보안 강화** - OAuth2, JWT, Spring Security
-
----
-
-## 🎯 프로젝트 하이라이트
-```yaml
-Enterprise E-commerce Platform:
-  Architecture: Microservices
-  Scale: Multi-tenant, Auto-scaling
-  Performance: >10K requests/sec
-  
-Real-time Trading System:
-  Architecture: Event-driven
-  Latency: <100ms
-  Throughput: >50K transactions/sec
-  
-IoT Web Server:
-  Platform: Raspberry Pi 4
-  Services: Flask, Lighttpd, Node.js
-  Features: Remote GPIO control, Real-time monitoring
-```
+- **분산 트랜잭션**: Saga Pattern의 Orchestration vs Choreography 비교 학습
+- **동시성 제어**: Redis 분산 락을 활용한 재고 관리 구현
+- **이벤트 기반 설계**: Kafka를 통한 서비스 간 느슨한 결합 구현
+- **MSA 패턴**: Circuit Breaker, Service Mesh 개념 학습
 
 ---
 
-## 📫 Contact & Links
+## 📖 학습 과정에서 해결한 문제들
+
+### 1. Redis Cluster vs Standalone
+**문제**: 로컬 개발 환경에서 Cluster 설정으로 인한 연결 실패
+**해결**: 환경별 설정 분리, Standalone 모드로 전환
+**학습**: 개발/프로덕션 환경 차이 이해
+
+### 2. Saga Pattern 보상 트랜잭션
+**문제**: 분산 환경에서 트랜잭션 롤백 처리
+**해결**: Order Service를 Orchestrator로 두고 보상 로직 구현
+**학습**: 분산 시스템에서의 데이터 일관성 유지 방법
+
+### 3. Feign Client API 통합
+**문제**: 서비스 간 API 호출 시 경로 및 DTO 불일치
+**해결**: API 버전 관리 컨벤션 정립, DTO 매핑 레이어 추가
+**학습**: 마이크로서비스 간 계약 설계의 중요성
+
+---
+
+## 🎯 다음 학습 계획
+
+- [ ] Elasticsearch를 활용한 상품 검색 기능 고도화
+- [ ] Zipkin을 통한 분산 추적 구현
+- [ ] Spring WebFlux 반응형 프로그래밍 학습
+- [ ] 통합 테스트 자동화 (Testcontainers)
+- [ ] Kubernetes StatefulSet 및 Operator Pattern
+
+---
+
+## 📫 Contact
 
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/parkmin-je)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://github.com/parkmin-je/portfolio)
 
 </div>
+
 ---
 
 ## 🐍 Contribution Snake
@@ -199,20 +182,13 @@ IoT Web Server:
 </picture>
 
 </div>
+
 ---
 
 <div align="center">
 
-### 💭 Developer Philosophy
+**"학습하고, 구현하고, 이해합니다"**
 
-*"확장 가능하고 안정적인 시스템을 설계하는 것을 좋아합니다"*
-
-*"백엔드부터 임베디드까지, 풀스택 IoT 개발자를 지향합니다"*
-
-<img src="https://komarev.com/ghpvc/?username=parkmin-je&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
-
----
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=150&section=footer" />
+*2024-2026 백엔드 개발자 학습 여정*
 
 </div>
