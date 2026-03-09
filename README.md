@@ -109,8 +109,9 @@ Java · Spring Boot · Kafka · Kubernetes · Elasticsearch · gRPC
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=parkmin-je&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=parkmin-je&layout=compact&theme=tokyonight&hide_border=true)
+[![GitHub Streak](https://streak-stats.demolab.com/?user=parkmin-je&theme=tokyonight&hide_border=true)](https://github.com/parkmin-je)
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=parkmin-je&theme=tokyonight&no-frame=true&column=6&margin-w=5)](https://github.com/parkmin-je)
 
 </div>
 
