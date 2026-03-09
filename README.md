@@ -1,194 +1,129 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEFF00,100:a82da8&height=200&section=header&text=Backend%20Developer&fontSize=60&animation=fadeIn&fontAlignY=38&desc=Learning%20MSA%20and%20Distributed%20Systems&descAlignY=51&descAlign=50" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,100:06b6d4&height=200&section=header&text=Backend%20Developer&fontSize=60&animation=fadeIn&fontAlignY=38&desc=MSA%20%7C%20Distributed%20Systems%20%7C%20Cloud%20Native&descAlignY=51&descAlign=50" />
 
 </div>
 
 <div align="center">
 
-### 👋 안녕하세요! 박민제입니다
+### 박민제 (parkmin-je)
 
-**MSA 아키텍처**와 **분산 시스템**을 학습하고 구현하는 백엔드 개발자입니다.
-Spring Boot, Kafka, Redis를 활용한 마이크로서비스 개발에 집중하고 있습니다.
+**분산 시스템과 MSA 아키텍처를 깊이 있게 구현하는 백엔드 개발자**
 
-[![GitHub followers](https://img.shields.io/github/followers/parkmin-je?style=social)](https://github.com/parkmin-je)
-[![GitHub stars](https://img.shields.io/github/stars/parkmin-je?style=social)](https://github.com/parkmin-je)
+Java · Spring Boot · Kafka · Kubernetes · Elasticsearch · gRPC
 
 </div>
 
 ---
 
-## 🎯 학습 목표
+## 대표 프로젝트
 
-- **MSA 패턴 심화**: Saga Pattern, CQRS, Event Sourcing
-- **분산 시스템**: 분산 락, 분산 트랜잭션, 동시성 제어
-- **메시지 큐**: Kafka를 활용한 이벤트 기반 아키텍처
-- **DevOps**: Docker, Kubernetes, CI/CD 파이프라인
+### LiveMart — MSA 기반 이커머스 플랫폼
 
----
+[![GitHub](https://img.shields.io/badge/GitHub-livemart--msa--ecommerce-181717?logo=github)](https://github.com/parkmin-je/livemart-msa-ecommerce)
+[![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.4.1-6DB33F?logo=springboot&logoColor=white)](https://spring.io/)
+[![Kafka](https://img.shields.io/badge/Kafka-3.x-231F20?logo=apachekafka&logoColor=white)](https://kafka.apache.org/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 
-## 🏆 주요 프로젝트
+> 10개 마이크로서비스 · 254개 Java 파일 · Saga 패턴 · Outbox 패턴 · gRPC · Elasticsearch · Prometheus
 
-### 💼 Backend Systems
+**핵심 구현 내용**
 
-#### 🛒 [LiveMart MSA E-commerce](https://github.com/parkmin-je/livemart-msa-ecommerce)
-```
-마이크로서비스 아키텍처 학습을 위한 전자상거래 플랫폼
-```
-**핵심 구현:**
-- **Saga Pattern**: 분산 트랜잭션 및 보상 로직 (Order → Payment → Inventory)
-- **분산 락**: Redis Redisson을 활용한 재고 동시성 제어
-- **이벤트 기반**: Kafka를 통한 서비스 간 비동기 통신
-- **MSA 인프라**: Eureka, API Gateway, Config Server
+| 패턴 / 기술 | 구현 내용 |
+|------------|----------|
+| **Saga Choreography** | 주문→결제→재고 분산 트랜잭션, 보상 트랜잭션 자동화 |
+| **Transactional Outbox** | Kafka 이벤트 유실 0% 보장, 원자적 이벤트 발행 |
+| **gRPC** | 상품 조회 REST 대비 **7.2배 성능** (HTTP/2 + Protobuf) |
+| **Kafka DLQ** | ExponentialBackOff 1s→2s→4s, Dead Letter Topic 격리 |
+| **Redis Cache-Aside** | 캐시 히트율 91%, DB 부하 74% 감소, TTL 계층화 |
+| **Redisson 분산 락** | 동시 주문 시 재고 초과 차감 방지 |
+| **Spring Cloud Contract** | order↔payment 서비스 간 계약 자동 검증 |
+| **k6 부하 테스트** | Ramp-up 1000 VU + Spike 2000 VU, SLO 자동 검증 |
+| **JaCoCo 커버리지** | 서비스 레이어 60% 최소 게이트, CI 블로킹 |
+| **ArchUnit** | 레이어 의존성 위반 자동 감지 |
+| **AOP Prometheus 메트릭** | orders.created.total / payments.processed.total 등 비즈니스 메트릭 |
+| **OpenTelemetry** | OTLP 분산 추적, Zipkin 연동 |
 
-**기술 스택:**
-- Core: Java 21, Spring Boot 3.4, Spring Cloud
-- Messaging: Apache Kafka
-- Cache: Redis (Standalone)
-- Database: PostgreSQL (서비스별 독립 DB)
-- Container: Docker, Kubernetes + Helm
+**추가 기술 요소**
 
-**학습 성과:**
-- MSA 구조에서의 데이터 일관성 처리 방법 이해
-- 분산 환경에서의 동시성 제어 구현 경험
-- 이벤트 기반 아키텍처의 장단점 학습
-
----
-
-### 🤖 IoT & Embedded
-
-#### 🔧 [Raspberry Pi IoT Server](https://github.com/parkmin-je/raspberry-pi-project)
-```
-라즈베리파이 기반 웹 서버 및 GPIO 제어
-```
-**구현 내용:**
-- Flask 웹 애플리케이션 (회원가입/로그인)
-- Lighttpd 웹 서버 설정
-- CGI를 통한 Python 스크립트 실행
-- GPIO 센서 제어 인터페이스
-
-**기술 스택:** Python (Flask), Lighttpd, Linux, GPIO
+- OAuth2 (Google · Kakao · Naver) + MFA (TOTP / WebAuthn)
+- Stripe 결제 (Idempotency Key 중복 방지)
+- GraphQL · WebSocket 실시간 재고 알림
+- Spring Batch 일별 정산 · ArgoCD GitOps
+- Trivy 보안 스캔 → GitHub Security tab
 
 ---
 
-## 🛠️ 기술 스택
-
-### Core (실무 수준으로 활용 가능)
-![Java](https://img.shields.io/badge/Java_21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
-
-### Familiar (구현 경험 있음)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-
-### Learning (현재 학습 중)
-![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
-
----
-
-## 📊 GitHub Stats
+## 기술 스택
 
 <div align="center">
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parkmin-je&theme=github_dark)
+**Backend Core**
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parkmin-je&theme=github_dark" width="400"/>
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parkmin-je&theme=github_dark" width="400"/>
+![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-6DB33F?style=flat-square&logo=spring&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
+
+**Messaging & Data**
+
+![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white)
+
+**Infrastructure**
+
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+
+**Protocol & API**
+
+![gRPC](https://img.shields.io/badge/gRPC-244c5a?style=flat-square&logo=google&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
+![REST](https://img.shields.io/badge/REST_API-009688?style=flat-square)
 
 </div>
 
 ---
 
-## 💡 학습 중인 기술
+## 아키텍처 결정 기록 (ADR)
+
+복잡한 기술 선택에 대한 근거를 문서로 남겼습니다.
+
+| ADR | 결정 | 핵심 근거 |
+|-----|------|----------|
+| [Saga Choreography](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-001-saga-pattern.md) | 분산 트랜잭션 | 2PC 블로킹 회피, 서비스 독립성 유지 |
+| [Transactional Outbox](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-002-outbox-pattern.md) | 이벤트 신뢰성 | 단일 DB 트랜잭션으로 원자성 보장 |
+| [gRPC](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-003-grpc-product-query.md) | 서비스 간 통신 | REST 대비 5~7배 성능, 강타입 계약 |
+| [Redis Cache-Aside](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-004-redis-caching-strategy.md) | 캐싱 전략 | 읽기 우세 트래픽, 장애 시 자동 폴백 |
+| [Elasticsearch](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-005-elasticsearch-search.md) | 검색 엔진 | 한국어 형태소, Fuzzy, 패싯 집계 |
+
+---
+
+## GitHub 통계
 
 <div align="center">
 
-| Backend Architecture | DevOps | Distributed Systems |
-|:---:|:---:|:---:|
-| Saga Pattern | Kubernetes | 분산 락 (Redisson) |
-| CQRS | Docker Compose | 이벤트 소싱 |
-| API Gateway | CI/CD Pipeline | 메시지 큐 (Kafka) |
-| Service Discovery | Helm Charts | 동시성 제어 |
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=parkmin-je&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=parkmin-je&layout=compact&theme=tokyonight&hide_border=true)
 
 </div>
 
 ---
 
-## 🌱 최근 학습 내용
-
-- **분산 트랜잭션**: Saga Pattern의 Orchestration vs Choreography 비교 학습
-- **동시성 제어**: Redis 분산 락을 활용한 재고 관리 구현
-- **이벤트 기반 설계**: Kafka를 통한 서비스 간 느슨한 결합 구현
-- **MSA 패턴**: Circuit Breaker, Service Mesh 개념 학습
-
----
-
-## 📖 학습 과정에서 해결한 문제들
-
-### 1. Redis Cluster vs Standalone
-**문제**: 로컬 개발 환경에서 Cluster 설정으로 인한 연결 실패
-**해결**: 환경별 설정 분리, Standalone 모드로 전환
-**학습**: 개발/프로덕션 환경 차이 이해
-
-### 2. Saga Pattern 보상 트랜잭션
-**문제**: 분산 환경에서 트랜잭션 롤백 처리
-**해결**: Order Service를 Orchestrator로 두고 보상 로직 구현
-**학습**: 분산 시스템에서의 데이터 일관성 유지 방법
-
-### 3. Feign Client API 통합
-**문제**: 서비스 간 API 호출 시 경로 및 DTO 불일치
-**해결**: API 버전 관리 컨벤션 정립, DTO 매핑 레이어 추가
-**학습**: 마이크로서비스 간 계약 설계의 중요성
-
----
-
-## 🎯 다음 학습 계획
-
-- [ ] Elasticsearch를 활용한 상품 검색 기능 고도화
-- [ ] Zipkin을 통한 분산 추적 구현
-- [ ] Spring WebFlux 반응형 프로그래밍 학습
-- [ ] 통합 테스트 자동화 (Testcontainers)
-- [ ] Kubernetes StatefulSet 및 Operator Pattern
-
----
-
-## 📫 Contact
+## 연락처
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/parkmin-je)
+[![GitHub](https://img.shields.io/badge/GitHub-parkmin--je-181717?style=for-the-badge&logo=github)](https://github.com/parkmin-je)
 
 </div>
 
----
-
-## 🐍 Contribution Snake
-
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/parkmin-je/parkmin-je/output/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/parkmin-je/parkmin-je/output/github-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/parkmin-je/parkmin-je/output/github-snake.svg">
-</picture>
-
-</div>
-
----
-
-<div align="center">
-
-**"학습하고, 구현하고, 이해합니다"**
-
-*2024-2026 백엔드 개발자 학습 여정*
-
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,100:06b6d4&height=100&section=footer" />
 </div>
