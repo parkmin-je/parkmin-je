@@ -12,6 +12,8 @@
 
 Java · Spring Boot · Kafka · Kubernetes · Elasticsearch · gRPC
 
+![Profile Views](https://komarev.com/ghpvc/?username=parkmin-je&color=6366f1&style=flat-square&label=Profile+Views)
+
 </div>
 
 ---
@@ -55,6 +57,38 @@ Java · Spring Boot · Kafka · Kubernetes · Elasticsearch · gRPC
 
 ---
 
+### 로보틱스 프로젝트
+
+<table>
+<tr>
+<td width="50%">
+
+**🤖 AMR Pilot — 자율이동로봇**
+
+[![GitHub](https://img.shields.io/badge/GitHub-amr--pilot-181717?logo=github)](https://github.com/parkmin-je/amr-pilot)
+[![ROS2](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
+
+ROS2 Humble + Gazebo 시뮬레이션 · TurtleBot3
+SLAM Toolbox · Nav2 네비게이션 스택
+AI 기반 자율주행 경로 계획
+
+</td>
+<td width="50%">
+
+**🔬 ROS Noetic Study**
+
+[![GitHub](https://img.shields.io/badge/GitHub-ros--noetic--study-181717?logo=github)](https://github.com/parkmin-je/ros-noetic-study)
+[![ROS](https://img.shields.io/badge/ROS-Noetic-22314E?logo=ros&logoColor=white)](https://wiki.ros.org/noetic)
+
+SLAM · 센서 퓨전 · TF 변환
+자율로봇 개발을 위한 네비게이션 스택 연구
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 기술 스택
 
 <div align="center">
@@ -86,6 +120,14 @@ Java · Spring Boot · Kafka · Kubernetes · Elasticsearch · gRPC
 ![gRPC](https://img.shields.io/badge/gRPC-244c5a?style=flat-square&logo=google&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
 ![REST](https://img.shields.io/badge/REST_API-009688?style=flat-square)
+
+**Robotics & Embedded**
+
+![ROS2](https://img.shields.io/badge/ROS2_Humble-22314E?style=flat-square&logo=ros&logoColor=white)
+![Gazebo](https://img.shields.io/badge/Gazebo-FF6600?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white)
 
 </div>
 
@@ -122,6 +164,7 @@ Java · Spring Boot · Kafka · Kubernetes · Elasticsearch · gRPC
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-parkmin--je-181717?style=for-the-badge&logo=github)](https://github.com/parkmin-je)
+[![LiveMart](https://img.shields.io/badge/Flagship_Project-LiveMart_MSA-6366f1?style=for-the-badge&logo=spring&logoColor=white)](https://github.com/parkmin-je/livemart-msa-ecommerce)
 
 </div>
 
