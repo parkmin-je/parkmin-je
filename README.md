@@ -1,173 +1,162 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,100:06b6d4&height=200&section=header&text=Backend%20Developer&fontSize=60&animation=fadeIn&fontAlignY=38&desc=MSA%20%7C%20Distributed%20Systems%20%7C%20Cloud%20Native&descAlignY=51&descAlign=50" />
+<h1>박민제 · Park Minje</h1>
 
-</div>
+<p><strong>백엔드 개발자 취준생</strong> · Java / Spring Boot / Kafka / Kubernetes</p>
 
-<div align="center">
+<p>
+  인천광역시 &nbsp;·&nbsp; 인하공업전문대학 졸업 &nbsp;·&nbsp; 방송통신대학교 재학 중 &nbsp;·&nbsp; 2025.01 ~ GitHub 활동 중
+</p>
 
-### 박민제 (parkmin-je)
-
-**분산 시스템과 MSA 아키텍처를 깊이 있게 구현하는 백엔드 개발자**
-
-Java · Spring Boot · Kafka · Kubernetes · Elasticsearch · gRPC
-
-![Profile Views](https://komarev.com/ghpvc/?username=parkmin-je&color=6366f1&style=flat-square&label=Profile+Views)
+<p>
+  <a href="mailto:alswp6@naver.com">
+    <img src="https://img.shields.io/badge/Email-alswp6%40naver.com-EA4335?style=flat-square&logo=gmail&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/parkmin-je/livemart-msa-ecommerce">
+    <img src="https://img.shields.io/badge/Flagship_Project-LiveMart-007396?style=flat-square&logo=spring&logoColor=white"/>
+  </a>
+</p>
 
 </div>
 
 ---
 
-## 대표 프로젝트
+## 소개
 
-### LiveMart — MSA 기반 이커머스 플랫폼
+안녕하세요. Java / Spring Boot 기반 백엔드 개발을 공부하며 취업을 준비하고 있는 박민제입니다.
 
-[![GitHub](https://img.shields.io/badge/GitHub-livemart--msa--ecommerce-181717?logo=github)](https://github.com/parkmin-je/livemart-msa-ecommerce)
-[![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.4.1-6DB33F?logo=springboot&logoColor=white)](https://spring.io/)
-[![Kafka](https://img.shields.io/badge/Kafka-3.x-231F20?logo=apachekafka&logoColor=white)](https://kafka.apache.org/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)](https://kubernetes.io/)
-
-> 10개 마이크로서비스 · 254개 Java 파일 · Saga 패턴 · Outbox 패턴 · gRPC · Elasticsearch · Prometheus
-
-**핵심 구현 내용**
-
-| 패턴 / 기술 | 구현 내용 |
-|------------|----------|
-| **Saga Choreography** | 주문→결제→재고 분산 트랜잭션, 보상 트랜잭션 자동화 |
-| **Transactional Outbox** | Kafka 이벤트 유실 0% 보장, 원자적 이벤트 발행 |
-| **gRPC** | 상품 조회 REST 대비 **7.2배 성능** (HTTP/2 + Protobuf) |
-| **Kafka DLQ** | ExponentialBackOff 1s→2s→4s, Dead Letter Topic 격리 |
-| **Redis Cache-Aside** | 캐시 히트율 91%, DB 부하 74% 감소, TTL 계층화 |
-| **Redisson 분산 락** | 동시 주문 시 재고 초과 차감 방지 |
-| **Spring Cloud Contract** | order↔payment 서비스 간 계약 자동 검증 |
-| **k6 부하 테스트** | Ramp-up 1000 VU + Spike 2000 VU, SLO 자동 검증 |
-| **JaCoCo 커버리지** | 서비스 레이어 60% 최소 게이트, CI 블로킹 |
-| **ArchUnit** | 레이어 의존성 위반 자동 감지 |
-| **AOP Prometheus 메트릭** | orders.created.total / payments.processed.total 등 비즈니스 메트릭 |
-| **OpenTelemetry** | OTLP 분산 추적, Zipkin 연동 |
-
-**추가 기술 요소**
-
-- OAuth2 (Google · Kakao · Naver) + MFA (TOTP / WebAuthn)
-- Stripe 결제 (Idempotency Key 중복 방지)
-- GraphQL · WebSocket 실시간 재고 알림
-- Spring Batch 일별 정산 · ArgoCD GitOps
-- Trivy 보안 스캔 → GitHub Security tab
+직접 만들어보면서 배우는 스타일이라, MSA 아키텍처 패턴을 실제 코드로 구현한 포트폴리오 프로젝트를 진행 중입니다.
+백엔드 외에도 Raspberry Pi와 ROS2를 활용한 IoT·로보틱스에도 관심이 있습니다.
 
 ---
 
-### 로보틱스 프로젝트
+## 진행 중인 프로젝트
 
-<table>
-<tr>
-<td width="50%">
+### 🛒 LiveMart — MSA 기반 이커머스 플랫폼
 
-**🤖 AMR Pilot — 자율이동로봇**
+> 분산 시스템 패턴을 직접 구현해보며 공부하는 포트폴리오 프로젝트입니다.
+> 현재 개발 진행 중이며, 프로덕션 운영 환경이 아닌 학습·취업 준비 목적의 프로젝트입니다.
 
-[![GitHub](https://img.shields.io/badge/GitHub-amr--pilot-181717?logo=github)](https://github.com/parkmin-je/amr-pilot)
-[![ROS2](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
+**왜 만들었나요?**
 
-ROS2 Humble + Gazebo 시뮬레이션 · TurtleBot3
-SLAM Toolbox · Nav2 네비게이션 스택
-AI 기반 자율주행 경로 계획
+분산 트랜잭션, 이벤트 유실, 서비스 간 통신 지연 같은 MSA의 핵심 문제들을
+책이나 강의가 아닌 코드로 직접 해결해보고 싶어서 시작했습니다.
 
-</td>
-<td width="50%">
+**직접 구현해본 패턴들:**
 
-**🔬 ROS Noetic Study**
+| 문제 | 선택한 방법 | 이유 |
+|---|---|---|
+| 분산 트랜잭션 (주문→결제→재고) | Saga Choreography | 2PC 블로킹 없이 서비스 독립성 유지 |
+| Kafka 이벤트 유실 방지 | Transactional Outbox | DB 저장과 이벤트 발행을 단일 트랜잭션으로 묶음 |
+| 서비스 간 통신 | gRPC (Protobuf) | REST 대비 바이너리 직렬화로 페이로드 경량화 |
+| 동시 주문 재고 처리 | Redisson 분산 락 | 동시성 문제로 인한 재고 초과 차감 방지 |
+| Kafka 장애 격리 | DLQ + Exponential Backoff | 1s→2s→4s, 3회 재시도 후 DLT로 분리 |
+| 읽기 부하 분산 | Redis Cache-Aside | 반복 조회 쿼리를 캐시로 처리 |
+| 상품 검색 | Elasticsearch (nori 형태소) | 한국어 형태소 분석, 오타 허용 검색 |
 
-[![GitHub](https://img.shields.io/badge/GitHub-ros--noetic--study-181717?logo=github)](https://github.com/parkmin-je/ros-noetic-study)
-[![ROS](https://img.shields.io/badge/ROS-Noetic-22314E?logo=ros&logoColor=white)](https://wiki.ros.org/noetic)
+**서비스 구성 (10개 서비스, 개발 진행 중):**
 
-SLAM · 센서 퓨전 · TF 변환
-자율로봇 개발을 위한 네비게이션 스택 연구
+```
+api-gateway        Spring Cloud Gateway · JWT 검증 · Rate Limiting · Circuit Breaker
+order-service      주문 · Saga · 쿠폰 · 반품 · Spring Batch
+product-service    상품 · Elasticsearch · gRPC 서버 · GraphQL · WebSocket
+payment-service    Stripe 결제 · 환불 · DLQ 처리
+user-service       회원 · JWT · OAuth2 (Google/Kakao/Naver) · MFA
+analytics-service  판매 분석 · A/B 테스트
+inventory-service  재고 관리 · 자동 발주
+notification-service  이메일/알림 (Kafka 이벤트 기반)
+eureka-server      서비스 레지스트리
+config-server      중앙 설정 관리
+```
 
-</td>
-</tr>
-</table>
+**기술 스택:**
+
+```
+Backend     Java 21 · Spring Boot 3.4.1 · Spring Cloud 2024.0.0 · Gradle
+Frontend    TypeScript · React
+Messaging   Apache Kafka · Dead Letter Queue
+Database    PostgreSQL · Redis · Elasticsearch 8
+Auth        JWT · OAuth2 · MFA (TOTP/WebAuthn)
+Payment     Stripe (Idempotency Key 기반 중복 방지)
+Infra       Docker · Kubernetes · GitHub Actions · Helm · ArgoCD
+IaC         Terraform (HCL)
+Monitoring  Prometheus · Grafana · OpenTelemetry → Zipkin
+Testing     JUnit 5 · Testcontainers · Spring Cloud Contract · k6 · JaCoCo
+Dev Env     Windows 11 · WSL2 · IntelliJ IDEA 2025.3.2
+```
+
+**아키텍처 의사결정 기록 (ADR):**
+[ADR-001 Saga](./docs/adr/ADR-001-saga-choreography.md) · [ADR-002 Outbox](./docs/adr/ADR-002-transactional-outbox.md) · [ADR-003 gRPC](./docs/adr/ADR-003-grpc-communication.md) · [ADR-004 Cache](./docs/adr/ADR-004-cache-aside.md) · [ADR-005 Elasticsearch](./docs/adr/ADR-005-elasticsearch.md)
+
+---
+
+### 🤖 AMR-Pilot — 자율이동로봇 시뮬레이션 (진행 중)
+
+> ROS2 Humble + Gazebo로 자율주행 로봇을 공부하는 프로젝트입니다.
+
+- [x] Gazebo 시뮬레이션 환경 구성
+- [x] LiDAR 데이터 RViz2 시각화
+- [ ] SLAM 기반 지도 생성
+- [ ] Nav2 자율 경로 계획
+- [ ] YOLO 객체 인식 연동
+
+**스택:** ROS2 Humble · Gazebo · TurtleBot3 · SLAM Toolbox · Nav2 · Python/C++
+
+---
+
+### 🍓 Raspberry Pi IoT 대시보드
+
+> DHT11 센서 데이터를 Flask + MariaDB로 수집하고 Chart.js로 시각화한 프로젝트입니다.
+
+- 10초 간격 자동 수집, 30°C 초과 시 알림, 시간대별 트렌드 분석
+- **스택:** Python · Flask · MariaDB · Chart.js · PyMySQL
+
+---
+
+### 📚 ROS Noetic Study
+
+ROS Noetic 학습 기록 저장소입니다. 토픽 통신, 서비스 통신, TF 변환, Wall-follower 로봇 구현 등을 다룹니다.
 
 ---
 
 ## 기술 스택
 
-<div align="center">
+**주로 사용하는 것:**
 
-**Backend Core**
-
-![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/Java_21-007396?style=flat-square&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-6DB33F?style=flat-square&logo=spring&logoColor=white)
-![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux_WSL2-FCC624?style=flat-square&logo=linux&logoColor=black)
 
-**Messaging & Data**
+**공부하며 쓰는 것:**
 
 ![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white)
-
-**Infrastructure**
-
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
-
-**Protocol & API**
-
-![gRPC](https://img.shields.io/badge/gRPC-244c5a?style=flat-square&logo=google&logoColor=white)
-![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
-![REST](https://img.shields.io/badge/REST_API-009688?style=flat-square)
-
-**Robotics & Embedded**
-
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
 ![ROS2](https://img.shields.io/badge/ROS2_Humble-22314E?style=flat-square&logo=ros&logoColor=white)
-![Gazebo](https://img.shields.io/badge/Gazebo-FF6600?style=flat-square)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![CMake](https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white)
-
-</div>
 
 ---
 
-## 아키텍처 결정 기록 (ADR)
+## 지금까지의 흐름
 
-복잡한 기술 선택에 대한 근거를 문서로 남겼습니다.
-
-| ADR | 결정 | 핵심 근거 |
-|-----|------|----------|
-| [Saga Choreography](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-001-saga-pattern.md) | 분산 트랜잭션 | 2PC 블로킹 회피, 서비스 독립성 유지 |
-| [Transactional Outbox](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-002-outbox-pattern.md) | 이벤트 신뢰성 | 단일 DB 트랜잭션으로 원자성 보장 |
-| [gRPC](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-003-grpc-product-query.md) | 서비스 간 통신 | REST 대비 5~7배 성능, 강타입 계약 |
-| [Redis Cache-Aside](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-004-redis-caching-strategy.md) | 캐싱 전략 | 읽기 우세 트래픽, 장애 시 자동 폴백 |
-| [Elasticsearch](https://github.com/parkmin-je/livemart-msa-ecommerce/blob/main/docs/adr/ADR-005-elasticsearch-search.md) | 검색 엔진 | 한국어 형태소, Fuzzy, 패싯 집계 |
-
----
-
-## GitHub 통계
-
-<div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com/?user=parkmin-je&theme=tokyonight&hide_border=true)](https://github.com/parkmin-je)
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=parkmin-je&theme=tokyo-night&hide_border=true&area=true)](https://github.com/parkmin-je)
-
-</div>
+```
+2024        Arduino LED 제어, Linux 일기 → 기초 다지기
+2025.01     GitHub 시작
+2025.02~    Raspberry Pi 센서 대시보드 (Flask + DB 연동)
+2025.03~    ROS Noetic 학습 (SLAM, Navigation)
+2025.09~    LiveMart MSA 프로젝트 시작
+2026.01~    ROS2 + Gazebo 자율로봇 시뮬레이션
+2026.03     현재 — LiveMart 개발 진행 중, 취업 준비 중
+```
 
 ---
 
 ## 연락처
 
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-parkmin--je-181717?style=for-the-badge&logo=github)](https://github.com/parkmin-je)
-[![LiveMart](https://img.shields.io/badge/Flagship_Project-LiveMart_MSA-6366f1?style=for-the-badge&logo=spring&logoColor=white)](https://github.com/parkmin-je/livemart-msa-ecommerce)
-
-</div>
-
-<div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,100:06b6d4&height=100&section=footer" />
-</div>
+📧 alswp6@naver.com
+📍 인천광역시, 대한민국
