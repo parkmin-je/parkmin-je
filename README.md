@@ -5,9 +5,11 @@
 <p><strong>백엔드 개발자 취준생</strong> · Java / Spring Boot / Kafka / Kubernetes</p>
 
 <p>
-  인천광역시 &nbsp;·&nbsp; 인하공업전문대학 졸업 &nbsp;·&nbsp; 방송통신대학교 재학 중 &nbsp;·&nbsp; 2025.01 ~ GitHub 활동 중
+  인천광역시 &nbsp;·&nbsp; 인하공업전문대학 졸업 &nbsp;·&nbsp; 방송통신대학교 재학 중
+</p>
 
-
+<p>
+  인천일보 아카데미 국기과정 수료 (2025.04~2025.12) &nbsp;·&nbsp; 연희직업전문학교 스마트모빌리티 과정 수료중 (2025.12~)
 </p>
 
 <p>
@@ -60,16 +62,16 @@
 **서비스 구성 (10개 서비스, 개발 진행 중):**
 
 ```
-api-gateway        Spring Cloud Gateway · JWT 검증 · Rate Limiting · Circuit Breaker
-order-service      주문 · Saga · 쿠폰 · 반품 · Spring Batch
-product-service    상품 · Elasticsearch · gRPC 서버 · GraphQL · WebSocket
-payment-service    Stripe 결제 · 환불 · DLQ 처리
-user-service       회원 · JWT · OAuth2 (Google/Kakao/Naver) · MFA
-analytics-service  판매 분석 · A/B 테스트
-inventory-service  재고 관리 · 자동 발주
+api-gateway           Spring Cloud Gateway · JWT 검증 · Rate Limiting · Circuit Breaker
+order-service         주문 · Saga · 쿠폰 · 반품 · Spring Batch
+product-service       상품 · Elasticsearch · gRPC 서버 · GraphQL · WebSocket
+payment-service       Stripe 결제 · 환불 · DLQ 처리
+user-service          회원 · JWT · OAuth2 (Google/Kakao/Naver) · MFA
+analytics-service     판매 분석 · A/B 테스트
+inventory-service     재고 관리 · 자동 발주
 notification-service  이메일/알림 (Kafka 이벤트 기반)
-eureka-server      서비스 레지스트리
-config-server      중앙 설정 관리
+eureka-server         서비스 레지스트리
+config-server         중앙 설정 관리
 ```
 
 **기술 스택:**
@@ -147,18 +149,19 @@ ROS Noetic 학습 기록 저장소입니다. 토픽 통신, 서비스 통신, TF
 ## 지금까지의 흐름
 
 ```
-2024        Arduino LED 제어, Linux 일기 → 기초 다지기
-2025.01     GitHub 시작
-2025.02~    Raspberry Pi 센서 대시보드 (Flask + DB 연동)
-2025.03~    ROS Noetic 학습 (SLAM, Navigation)
-2025.09~    LiveMart MSA 프로젝트 시작
-2026.01~    ROS2 + Gazebo 자율로봇 시뮬레이션
-2026.03     현재 — LiveMart 개발 진행 중, 취업 준비 중
+2024           Arduino LED 제어, Linux 일기 → 개발 기초 다지기
+2025.01        GitHub 시작
+2025.04~12     인천일보 아카데미 국기과정 수료
+               → Raspberry Pi 센서 대시보드, ROS Noetic, Linux 자동화 학습
+2025.09~       LiveMart MSA 프로젝트 시작 (병행 개발)
+2025.12.31~    연희직업전문학교 스마트모빌리티 과정 수료 중
+               → ROS2 + Gazebo 자율이동로봇 시뮬레이션
+2026.03        현재 — LiveMart 개발 중 · 백엔드 취업 준비 중
 ```
 
 ---
 
 ## 연락처
 
-📧 alswp6@naver.com
+📧 alswp6@naver.com  
 📍 인천광역시, 대한민국
