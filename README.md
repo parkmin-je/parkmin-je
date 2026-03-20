@@ -58,18 +58,21 @@
 | Kafka 장애 격리 | DLQ + Exponential Backoff | 1s→2s→4s, 3회 재시도 후 DLT로 분리 |
 | 읽기 부하 분산 | Redis Cache-Aside | 반복 조회 쿼리를 캐시로 처리 |
 | 상품 검색 | Elasticsearch (nori 형태소) | 한국어 형태소 분석, 오타 허용 검색 |
+| 분산 실시간 알림 | Redis Pub/Sub (WebSocket·SSE) | 수평 확장 환경에서 포드 간 이벤트 브로드캐스팅 |
+| AI 기능 자동화 | Spring AI 1.0 (OpenRouter) | Hunter Alpha(MiMo-V2-Pro) 연동, 8종 AI 파이프라인 구현 |
 
 **서비스 구성 (10개 서비스, 개발 진행 중):**
 
 ```
 api-gateway           Spring Cloud Gateway · JWT 검증 · Rate Limiting · Circuit Breaker
 order-service         주문 · Saga · 쿠폰 · 반품 · Spring Batch
-product-service       상품 · Elasticsearch · gRPC 서버 · GraphQL · WebSocket
+product-service       상품 · Elasticsearch · gRPC 서버 · GraphQL · WebSocket · SSE
 payment-service       Stripe 결제 · 환불 · DLQ 처리
 user-service          회원 · JWT · OAuth2 (Google/Kakao/Naver) · MFA
 analytics-service     판매 분석 · A/B 테스트
 inventory-service     재고 관리 · 자동 발주
-notification-service  이메일/알림 (Kafka 이벤트 기반)
+notification-service  이메일/알림 (Kafka 이벤트 기반) · Redis Pub/Sub SSE
+ai-service            Spring AI 1.0 · Hunter Alpha(MiMo-V2-Pro) · 8종 AI 파이프라인
 eureka-server         서비스 레지스트리
 config-server         중앙 설정 관리
 ```
@@ -78,8 +81,10 @@ config-server         중앙 설정 관리
 
 ```
 Backend     Java 21 · Spring Boot 3.4.1 · Spring Cloud 2024.0.0 · Gradle
-Frontend    TypeScript · React
-Messaging   Apache Kafka · Dead Letter Queue
+Frontend    TypeScript · Next.js 15 · 다크모드 · SSE 지수 백오프
+Messaging   Apache Kafka · Dead Letter Queue · 병렬 소비 (Concurrency 3)
+Realtime    Redis Pub/Sub · WebSocket · SSE (분산 브로드캐스팅)
+AI          Spring AI 1.0 · OpenRouter · Hunter Alpha (MiMo-V2-Pro)
 Database    PostgreSQL · Redis · Elasticsearch 8
 Auth        JWT · OAuth2 · MFA (TOTP/WebAuthn)
 Payment     Stripe (Idempotency Key 기반 중복 방지)
@@ -156,7 +161,10 @@ ROS Noetic 학습 기록 저장소입니다. 토픽 통신, 서비스 통신, TF
 2025.09~       LiveMart MSA 프로젝트 시작 (병행 개발)
 2025.12.31~    연희직업전문학교 스마트모빌리티 과정 수료 중
                → ROS2 + Gazebo 자율이동로봇 시뮬레이션
-2026.03        현재 — LiveMart 개발 중 · 백엔드 취업 준비 중
+2026.03        Redis Pub/Sub 분산 WebSocket·SSE, Kafka 병렬 소비 구현
+               Spring AI 1.0 + Hunter Alpha AI 8종 파이프라인 완성
+               Java 21 Structured Concurrency 도입
+               현재 — LiveMart 개발 중 · 백엔드 취업 준비 중
 ```
 
 ---
