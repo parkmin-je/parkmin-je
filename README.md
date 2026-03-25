@@ -1,175 +1,48 @@
-<div align="center">
+# 박민제 (Park Min-je)
 
-<h1>박민제 · Park Minje</h1>
-
-<p><strong>백엔드 개발자 취준생</strong> · Java / Spring Boot / Kafka / Kubernetes</p>
-
-<p>
-  인천광역시 &nbsp;·&nbsp; 인하공업전문대학 졸업 &nbsp;·&nbsp; 방송통신대학교 재학 중
-</p>
-
-<p>
-  인천일보 아카데미 국기과정 수료 (2025.04~2025.12) &nbsp;·&nbsp; 연희직업전문학교 스마트모빌리티 과정 수료중 (2025.12~)
-</p>
-
-<p>
-  <a href="mailto:alswp6@naver.com">
-    <img src="https://img.shields.io/badge/Email-alswp6%40naver.com-EA4335?style=flat-square&logo=gmail&logoColor=white"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/parkmin-je/livemart-msa-ecommerce">
-    <img src="https://img.shields.io/badge/Flagship_Project-LiveMart-007396?style=flat-square&logo=spring&logoColor=white"/>
-  </a>
-</p>
-
-</div>
-
----
-
-## 소개
-
-안녕하세요. Java / Spring Boot 기반 백엔드 개발을 공부하며 취업을 준비하고 있는 박민제입니다.
-
-직접 만들어보면서 배우는 스타일이라, MSA 아키텍처 패턴을 실제 코드로 구현한 포트폴리오 프로젝트를 진행 중입니다.
-백엔드 외에도 Raspberry Pi와 ROS2를 활용한 IoT·로보틱스에도 관심이 있습니다.
-
----
-
-## 진행 중인 프로젝트
-
-### 🛒 LiveMart — MSA 기반 이커머스 플랫폼
-
-> 분산 시스템 패턴을 직접 구현해보며 공부하는 포트폴리오 프로젝트입니다.
-> 현재 개발 진행 중이며, 프로덕션 운영 환경이 아닌 학습·취업 준비 목적의 프로젝트입니다.
-
-**왜 만들었나요?**
-
-분산 트랜잭션, 이벤트 유실, 서비스 간 통신 지연 같은 MSA의 핵심 문제들을
-책이나 강의가 아닌 코드로 직접 해결해보고 싶어서 시작했습니다.
-
-**직접 구현해본 패턴들:**
-
-| 문제 | 선택한 방법 | 이유 |
-|---|---|---|
-| 분산 트랜잭션 (주문→결제→재고) | Saga Choreography | 2PC 블로킹 없이 서비스 독립성 유지 |
-| Kafka 이벤트 유실 방지 | Transactional Outbox | DB 저장과 이벤트 발행을 단일 트랜잭션으로 묶음 |
-| 서비스 간 통신 | gRPC (Protobuf) | REST 대비 바이너리 직렬화로 페이로드 경량화 |
-| 동시 주문 재고 처리 | Redisson 분산 락 | 동시성 문제로 인한 재고 초과 차감 방지 |
-| Kafka 장애 격리 | DLQ + Exponential Backoff | 1s→2s→4s, 3회 재시도 후 DLT로 분리 |
-| 읽기 부하 분산 | Redis Cache-Aside | 반복 조회 쿼리를 캐시로 처리 |
-| 상품 검색 | Elasticsearch (nori 형태소) | 한국어 형태소 분석, 오타 허용 검색 |
-| 분산 실시간 알림 | Redis Pub/Sub (WebSocket·SSE) | 수평 확장 환경에서 포드 간 이벤트 브로드캐스팅 |
-| AI 기능 자동화 | Spring AI 1.0 (OpenRouter) | Hunter Alpha(MiMo-V2-Pro) 연동, 8종 AI 파이프라인 구현 |
-
-**서비스 구성 (10개 서비스, 개발 진행 중):**
-
-```
-api-gateway           Spring Cloud Gateway · JWT 검증 · Rate Limiting · Circuit Breaker
-order-service         주문 · Saga · 쿠폰 · 반품 · Spring Batch
-product-service       상품 · Elasticsearch · gRPC 서버 · GraphQL · WebSocket · SSE
-payment-service       Stripe 결제 · 환불 · DLQ 처리
-user-service          회원 · JWT · OAuth2 (Google/Kakao/Naver) · MFA
-analytics-service     판매 분석 · A/B 테스트
-inventory-service     재고 관리 · 자동 발주
-notification-service  이메일/알림 (Kafka 이벤트 기반) · Redis Pub/Sub SSE
-ai-service            Spring AI 1.0 · Hunter Alpha(MiMo-V2-Pro) · 8종 AI 파이프라인
-eureka-server         서비스 레지스트리
-config-server         중앙 설정 관리
-```
-
-**기술 스택:**
-
-```
-Backend     Java 21 · Spring Boot 3.4.1 · Spring Cloud 2024.0.0 · Gradle
-Frontend    TypeScript · Next.js 15 · 다크모드 · SSE 지수 백오프
-Messaging   Apache Kafka · Dead Letter Queue · 병렬 소비 (Concurrency 3)
-Realtime    Redis Pub/Sub · WebSocket · SSE (분산 브로드캐스팅)
-AI          Spring AI 1.0 · OpenRouter · Hunter Alpha (MiMo-V2-Pro)
-Database    PostgreSQL · Redis · Elasticsearch 8
-Auth        JWT · OAuth2 · MFA (TOTP/WebAuthn)
-Payment     Stripe (Idempotency Key 기반 중복 방지)
-Infra       Docker · Kubernetes · GitHub Actions · Helm · ArgoCD
-IaC         Terraform (HCL)
-Monitoring  Prometheus · Grafana · OpenTelemetry → Zipkin
-Testing     JUnit 5 · Testcontainers · Spring Cloud Contract · k6 · JaCoCo
-Dev Env     Windows 11 · WSL2 · IntelliJ IDEA 2025.3.2
-```
-
-**아키텍처 의사결정 기록 (ADR):**
-[ADR-001 Saga](./docs/adr/ADR-001-saga-choreography.md) · [ADR-002 Outbox](./docs/adr/ADR-002-transactional-outbox.md) · [ADR-003 gRPC](./docs/adr/ADR-003-grpc-communication.md) · [ADR-004 Cache](./docs/adr/ADR-004-cache-aside.md) · [ADR-005 Elasticsearch](./docs/adr/ADR-005-elasticsearch.md)
-
----
-
-### 🤖 AMR-Pilot — 자율이동로봇 시뮬레이션 (진행 중)
-
-> ROS2 Humble + Gazebo로 자율주행 로봇을 공부하는 프로젝트입니다.
-
-- [x] Gazebo 시뮬레이션 환경 구성
-- [x] LiDAR 데이터 RViz2 시각화
-- [ ] SLAM 기반 지도 생성
-- [ ] Nav2 자율 경로 계획
-- [ ] YOLO 객체 인식 연동
-
-**스택:** ROS2 Humble · Gazebo · TurtleBot3 · SLAM Toolbox · Nav2 · Python/C++
-
----
-
-### 🍓 Raspberry Pi IoT 대시보드
-
-> DHT11 센서 데이터를 Flask + MariaDB로 수집하고 Chart.js로 시각화한 프로젝트입니다.
-
-- 10초 간격 자동 수집, 30°C 초과 시 알림, 시간대별 트렌드 분석
-- **스택:** Python · Flask · MariaDB · Chart.js · PyMySQL
-
----
-
-### 📚 ROS Noetic Study
-
-ROS Noetic 학습 기록 저장소입니다. 토픽 통신, 서비스 통신, TF 변환, Wall-follower 로봇 구현 등을 다룹니다.
+Java 백엔드 개발자 취준생입니다.  
+분산 시스템과 클라우드 인프라에 관심이 많고, 실무 패턴을 직접 구현하며 공부하고 있습니다.
 
 ---
 
 ## 기술 스택
 
-**주로 사용하는 것:**
+**백엔드**  
+Java 21 · Spring Boot 3 · Spring Cloud (Eureka, Gateway) · JPA · Kafka · Redis · gRPC · Elasticsearch
 
-![Java](https://img.shields.io/badge/Java_21-007396?style=flat-square&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux_WSL2-FCC624?style=flat-square&logo=linux&logoColor=black)
+**인프라**  
+Docker · Kubernetes · GitHub Actions · AWS (EKS, RDS, ElastiCache) · Terraform · Helm · ArgoCD
 
-**공부하며 쓰는 것:**
+**프론트엔드**  
+Next.js 15 · React · TypeScript · Tailwind CSS
 
-![Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
-![ROS2](https://img.shields.io/badge/ROS2_Humble-22314E?style=flat-square&logo=ros&logoColor=white)
+**테스트**  
+JUnit 5 · Testcontainers · ArchUnit · Spring Cloud Contract · k6
 
 ---
 
-## 지금까지의 흐름
+## 주요 프로젝트
 
-```
-2024           Arduino LED 제어, Linux 일기 → 개발 기초 다지기
-2025.01        GitHub 시작
-2025.04~12     인천일보 아카데미 국기과정 수료
-               → Raspberry Pi 센서 대시보드, ROS Noetic, Linux 자동화 학습
-2025.09~       LiveMart MSA 프로젝트 시작 (병행 개발)
-2025.12.31~    연희직업전문학교 스마트모빌리티 과정 수료 중
-               → ROS2 + Gazebo 자율이동로봇 시뮬레이션
-2026.03        Redis Pub/Sub 분산 WebSocket·SSE, Kafka 병렬 소비 구현
-               Spring AI 1.0 + Hunter Alpha AI 8종 파이프라인 완성
-               Java 21 Structured Concurrency 도입
-               현재 — LiveMart 개발 중 · 백엔드 취업 준비 중
-```
+### [LiveMart — MSA 이커머스 플랫폼](https://github.com/parkmin-je/livemart-msa-ecommerce)
+Java 21 + Spring Boot 3.4 기반 MSA 포트폴리오 프로젝트
+
+실무에서 자주 쓰이는 분산 시스템 패턴을 직접 구현하며 공부했습니다.
+- Saga Choreography + Transactional Outbox (주문→결제→재고 분산 트랜잭션)
+- gRPC 서비스 간 통신 (order↔product, Protobuf + HTTP/2)
+- Redis Pub/Sub 기반 수평 확장 가능한 실시간 알림 (SSE)
+- Kafka DLQ + ExponentialBackOff 재시도 (장애 격리)
+- Spring AI 1.0 + OpenRouter LLM 연동
+- Prometheus + Grafana + OpenTelemetry 모니터링
+
+### [탁구 대회 관리 시스템](https://github.com/parkmin-je/table-tennis-tournament)
+Spring Boot 3 + Thymeleaf + WebSocket 기반 탁구 대회 관리 플랫폼
+
+### [라즈베리파이 IoT 대시보드](https://github.com/parkmin-je/raspberry-pi-project)
+Flask + MariaDB + Chart.js로 구현한 IoT 센서 데이터 시각화
 
 ---
 
-## 연락처
+## 학습 기록
 
-📧 alswp6@naver.com  
-📍 인천광역시, 대한민국
+- [알고리즘 풀이](https://github.com/parkmin-je/algorithm-practice) — Java 알고리즘 문제 풀이
+- [Linux 학습 일지](https://github.com/parkmin-je/linux_diary) — Linux 명령어 및 시스템 학습
