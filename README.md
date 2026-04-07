@@ -25,7 +25,7 @@ JUnit 5 · Testcontainers · ArchUnit · Spring Cloud Contract · Playwright · 
 
 ### 🛒 LiveMart — MSA 이커머스 플랫폼
 > Java 21 + Spring Boot 3.3 + Next.js 15 기반 MSA 포트폴리오 프로젝트  
-> **[🌐 라이브 데모](https://livemart-gpzzy4mj5-parkmin-jes-projects.vercel.app)** · **[⚙️ API 서버](http://34.64.189.54:8888/actuator/health)** · **[📦 GitHub](https://github.com/parkmin-je/livemart-msa-ecommerce)**
+> **[🌐 라이브 데모](https://livemart-parkmin-jes-projects.vercel.app)** · **[⚙️ API 서버](http://34.64.189.54:8888/actuator/health)** · **[📦 GitHub](https://github.com/parkmin-je/livemart-msa-ecommerce)**
 
 **구현 내용:**
 - **Saga Choreography + Transactional Outbox** — 주문→결제→재고 분산 트랜잭션 (이벤트 유실 0)
