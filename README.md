@@ -101,5 +101,5 @@ JUnit 5 · Testcontainers · Playwright · k6
 
 ## 연락처
 
-📧 alswp6@naver.com  
+📧 alswp6@naver.com · swaw5a@naver.com  
 [![GitHub](https://img.shields.io/badge/GitHub-parkmin--je-181717?logo=github)](https://github.com/parkmin-je)
