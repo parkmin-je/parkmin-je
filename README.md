@@ -1,6 +1,7 @@
 # 박민제
 
-Java 백엔드 개발자 취준생입니다.
+GCP에서 8개 마이크로서비스를 직접 배포·운영 중인 Java 백엔드 개발자입니다.  
+분산 트랜잭션·Race Condition·결제 보안 취약점 등 운영 환경의 실제 문제를 아키텍처 수준에서 해결해왔습니다.
 
 ---
 
@@ -16,24 +17,24 @@ Docker · Docker Compose · GCP Compute Engine · GitHub Actions
 Next.js 15 · React · TypeScript · Tailwind CSS
 
 **테스트**  
-JUnit 5 · Testcontainers · Playwright
+JUnit 5 · Testcontainers · Playwright · k6
 
 ---
 
 ## 프로젝트
 
 ### 🛒 LiveMart — MSA 이커머스
-> Java 21 + Spring Boot 3.3 + Next.js 15  
+> Java 21 + Spring Boot 3.4 + Next.js 15  
 > [라이브 데모](https://livemart-parkmin-jes-projects.vercel.app) · [GitHub](https://github.com/parkmin-je/livemart-msa-ecommerce)
 
-- Saga Choreography + Transactional Outbox 패턴으로 주문→결제→재고 분산 트랜잭션 구현
-- order↔product 서비스 간 gRPC 통신
-- Redis Pub/Sub 기반 다중 인스턴스 SSE 알림
-- Redisson 분산 락으로 재고 동시성 제어
-- Spring AI + OpenRouter LLM 연동
-- 7개 마이크로서비스 GCP VM 배포
+- Saga Choreography + Transactional Outbox — Kafka 장애 시나리오 500 VU 테스트에서 이벤트 유실 **0건** (k6 실측)
+- Cache-Aside 적용으로 상품 조회 응답시간 **1,240ms → 72ms** 단축 (k6 p99 실측)
+- Burp Suite로 결제 취약점 직접 발견 → 서버 측 금액 재검증으로 수정
+- Redis Pub/Sub으로 다중 인스턴스 SSE 분산 브로드캐스트
+- Redisson 분산 락으로 500 VU 동시 주문 재고 Race Condition **0건**
+- 8개 마이크로서비스 GCP VM 배포 · Vercel 프론트엔드 운영 중
 
-**기술:** Java 21 · Spring Boot 3.3 · Spring Cloud Gateway · Kafka · Redis · Elasticsearch · gRPC · Redisson · Next.js 15
+**기술:** Java 21 · Spring Boot 3.4 · Spring Cloud Gateway · Kafka · Redis · Elasticsearch · gRPC · Redisson · Next.js 15
 
 ---
 
@@ -41,14 +42,10 @@ JUnit 5 · Testcontainers · Playwright
 > Java 21 + Spring Boot 3.2 + ROS2  
 > [GitHub](https://github.com/parkmin-je/amr-control-tower)
 
-- ROS2 rosbridge WebSocket으로 로봇 상태 수집 (odom / scan / map / tf)
-- SLAM 맵·LiDAR 시각화 Canvas 렌더링
-- Nav2 목표 전송, WASD 수동 제어, E-Stop
-- WASD Watchdog — 브라우저 종료 시 1.5초 후 자동 정지
-- 로봇 오프라인 감지 — 5초 무응답 시 OFFLINE 상태 전환
-- Spring Security RBAC (VIEWER / OPERATOR / ADMIN)
-- Kafka 이벤트 파이프라인, Redis 세션, Flyway 마이그레이션
-- Docker Compose 풀스택, Prometheus + Grafana 모니터링
+- Ubuntu VM에 ROS2 Humble 환경 직접 구성 후 rosbridge WebSocket으로 Spring Boot 연동
+- slam_toolbox OccupancyGrid → PNG Canvas 실시간 렌더링 + `/tf` 변환으로 로봇 위치 오버레이
+- RBAC 3단계 (VIEWER / OPERATOR / ADMIN), E-Stop, Nav2 목표 전송
+- Kafka 이벤트 파이프라인, Flyway 마이그레이션, Docker Compose 풀스택
 
 **기술:** Java 21 · Spring Boot 3.2 · ROS2 · Kafka · Redis · Spring Security · Docker
 
@@ -69,11 +66,12 @@ JUnit 5 · Testcontainers · Playwright
 ### 🏓 탁구 대회 관리 시스템
 > [GitHub](https://github.com/parkmin-je/table-tennis-tournament)
 
-실제 탁구 동호회 요청으로 만든 대회 관리 시스템.
+실제 안산 탁구 동호회 요청으로 만든 대회 관리 시스템 (100명 규모 실사용).
 
+- N+1 쿼리 최적화 — 쿼리 50개 → 2개, 응답시간 **3초 → 0.5초**
 - 토너먼트 대진표 자동 생성 (Bye 처리)
 - WebSocket STOMP 실시간 경기 결과 업데이트
-- IP별 로그인 실패 횟수 추적, Brute-Force 방어
+- IP별 로그인 실패 추적, Brute-Force 방어
 
 **기술:** Java 21 · Spring Boot 3.5 · WebSocket · Spring Security · MariaDB
 
@@ -103,4 +101,5 @@ JUnit 5 · Testcontainers · Playwright
 
 ## 연락처
 
+📧 alswp6@naver.com  
 [![GitHub](https://img.shields.io/badge/GitHub-parkmin--je-181717?logo=github)](https://github.com/parkmin-je)
